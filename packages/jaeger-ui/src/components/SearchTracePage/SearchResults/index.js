@@ -23,6 +23,7 @@ import DiffSelection from './DiffSelection';
 import * as markers from './index.markers';
 import ResultItem from './ResultItem';
 import ScatterPlot from './ScatterPlot';
+import { Graph } from './Graph';
 import { getUrl } from '../url';
 import LoadingIndicator from '../../common/LoadingIndicator';
 import NewWindowIcon from '../../common/NewWindowIcon';
@@ -150,6 +151,13 @@ export default class SearchResults extends React.PureComponent<SearchResultsProp
                   onValueClick={t => {
                     goToTrace(t.traceID);
                   }}
+                />
+              </div>
+            )}
+            {!hideGraph && (
+              <div className="ub-p3"> 
+                <Graph
+                  traces={traces}
                 />
               </div>
             )}
